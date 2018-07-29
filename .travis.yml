@@ -1,0 +1,37 @@
+language: node_js
+node_js:
+  - "10"
+
+sudo: required
+
+services:
+- docker
+
+git:
+  depth: false
+
+script:
+# setup QEMU
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# build images
+- docker build -t ghost:$DOCKER_TAG -f Dockerfile.$DOCKER_ARCH .
+# basic tests
+# - docker run -d --name ghost-$DOCKER_TAG -p 2368:2368 --rm ghost:$DOCKER_TAG
+# - sleep 15 # Wait for ghost to start
+#- phantomjs testrunner.js
+# - docker stop ghost-$DOCKER_TAG
+# push images
+- docker login -u="$DOCKER_HUB_LOGIN" -p="$DOCKER_HUB_PASSWORD"
+- docker tag ghost:$DOCKER_TAG allandequeiroz/ghost-the-shell:$DOCKER_TAG
+- docker push allandequeiroz/ghost-the-shell:$DOCKER_TAG
+- >
+  if [ "$LATEST" == "true" ]; then
+    docker tag ghost:$DOCKER_TAG allandequeiroz/ghost-the-shell:latest
+    docker push allandequeiroz/ghost-the-shell:latest
+  fi
+
+env:
+  matrix:
+  - DOCKER_TAG=arm64     DOCKER_ARCH=arm64       LATEST=true
+  - DOCKER_TAG=amd64     DOCKER_ARCH=amd64
+  

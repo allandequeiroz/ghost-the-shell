@@ -1,0 +1,13 @@
+version: '3.2'
+
+services:
+
+  # Ghost server    
+  ghost:
+    image: local-ghost
+    ports:
+      - mode: host
+        target: 2368
+        published: 2368
+    volumes:
+      - ./blog:/var/www/ghost/content/data/
