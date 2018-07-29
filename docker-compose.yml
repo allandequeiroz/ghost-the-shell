@@ -10,4 +10,4 @@ services:
         target: 2368
         published: 2368
     volumes:
-      - ./blog:/var/www/ghost/content/data/
+      - /lab/data/blog:/var/www/ghost/content/data/
