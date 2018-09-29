@@ -1,10 +1,12 @@
-FROM arm64v8/node
+FROM rycus86/arm64v8-debian-qemu
 
 MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
 # Install dependencies 
 RUN apt-get update
 RUN apt-get install vim curl gnupg2 sudo wget unzip make build-essential libsqlite3-dev -y
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash 
+RUN apt-get install nodejs -y
 
 # Creating ghost directory and using it as a workdir
 RUN mkdir -p /var/www/ghost
