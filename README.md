@@ -1,8 +1,8 @@
 
 [![Travis](https://api.travis-ci.org/allandequeiroz/ghost-the-shell.svg)](https://api.travis-ci.org/allandequeiroz/ghost-the-shell)
 
-[![](https://images.microbadger.com/badges/image/allandequeiroz/ghost-the-shell.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/allandequeiroz/ghost-the-shell.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns:arm.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:arm "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns:arm.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:arm "Get your own version badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/image/allandequeiroz/ghost-the-shell:amd64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell:amd64 "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/allandequeiroz/ghost-the-shell:amd64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell:amd64 "Get your own version badge on microbadger.com")
