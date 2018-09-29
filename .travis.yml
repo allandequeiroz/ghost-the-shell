@@ -23,8 +23,6 @@ script:
 # push images
 - docker login -u="$DOCKER_HUB_LOGIN" -p="$DOCKER_HUB_PASSWORD"
 - docker tag ghost:$DOCKER_TAG allandequeiroz/ghost-the-shell:$DOCKER_TAG
-- docker manifest create allandequeiroz/ghost-the-shell:$DOCKER_TAG
-- docker manifest annotate allandequeiroz/ghost-the-shell:$DOCKER_TAG --arch $DOCKER_ARCH
 - docker push allandequeiroz/ghost-the-shell:$DOCKER_TAG
 - >
   if [ "$LATEST" == "true" ]; then
