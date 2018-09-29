@@ -1,0 +1,50 @@
+FROM resin/rpi-raspbian
+
+MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
+
+# Install dependencies 
+RUN apt-get update
+RUN apt-get install vim curl gnupg2 sudo wget unzip make build-essential libsqlite3-dev -y
+
+WORKDIR /usr/local/lib
+RUN wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-armv6l.tar.xz
+RUN tar -xvf node-v8.12.0-linux-armv6l.tar.xz
+RUN rm node-v8.12.0-linux-armv6l.tar.xz
+RUN ln -s /usr/local/lib/node-v8.12.0-linux-armv6l/bin/node /usr/bin/node
+RUN ln -s /usr/local/lib/node-v8.12.0-linux-armv6l/bin/npm /usr/bin/npm
+ 
+# Creating ghost directory and using it as a workdir
+RUN mkdir -p /var/www/ghost
+WORKDIR /var/www/ghost
+
+# Downloading and installing Ghost
+RUN wget https://ghost.org/zip/ghost-latest.zip
+RUN unzip ghost-latest.zip
+RUN rm ghost-latest.zip
+
+# Install The shell theme
+WORKDIR /var/www/ghost/content/themes
+RUN wget https://github.com/mityalebedev/The-Shell/archive/v0.1.2.tar.gz
+RUN tar -zxvf v0.1.2.tar.gz
+RUN rm v0.1.2.tar.gz
+
+# Setting default theme
+WORKDIR /var/www/ghost/core/server/data/schema
+RUN sed -i -e 's/"defaultValue": "casper"/"defaultValue": "The-Shell-0.1.2"/g' default-settings.json
+
+# Setting up needed configurations
+COPY conf/config.production.json /var/www/ghost
+COPY bin/start-ghost.sh /root
+RUN chmod +x /root/start-ghost.sh
+
+# Installing npm dependencies 
+WORKDIR /var/www/ghost
+RUN npm config set user 0
+RUN npm config set unsafe-perm true
+RUN npm install --production
+RUN npm install -g node-gyp
+RUN npm install -g yarn
+RUN npm install -g knex-migrator
+
+# Ghost starter 
+CMD [ "/root/start-ghost.sh" ]
