@@ -1,4 +1,4 @@
-FROM rycus86/arm64v8-debian-qemu
+FROM resin/rpi-raspbian
 
 MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
@@ -30,6 +30,7 @@ RUN sed -i -e 's/"defaultValue": "casper"/"defaultValue": "The-Shell-0.1.2"/g' d
 # Setting up needed configurations
 COPY conf/config.production.json /var/www/ghost
 COPY bin/start-ghost.sh /root
+RUN chmod +x /root/start-ghost.sh
 
 # Installing npm dependencies 
 WORKDIR /var/www/ghost
