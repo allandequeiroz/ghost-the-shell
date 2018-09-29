@@ -1,4 +1,4 @@
-FROM rycus86/arm64v8-debian-qemu
+FROM resin/rpi-raspbian
 
 MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
