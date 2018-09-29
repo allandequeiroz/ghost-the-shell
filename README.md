@@ -4,8 +4,8 @@
 [![](https://images.microbadger.com/badges/image/allandequeiroz/ghost-the-shell:arm64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell:arm64 "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/allandequeiroz/ghost-the-shell:arm64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell:arm64 "Get your own version badge on microbadger.com")
 
-[![](https://images.microbadger.com/badges/image/allandequeiroz/ghost-the-shell.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/allandequeiroz/ghost-the-shell.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/allandequeiroz/ghost-the-shell:amd64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/allandequeiroz/ghost-the-shell:amd64.svg)](https://microbadger.com/images/allandequeiroz/ghost-the-shell "Get your own version badge on microbadger.com")
 
 # Ghost with the-shel theme by default
 
