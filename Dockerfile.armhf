@@ -1,4 +1,4 @@
-FROM rycus86/armhf-debian-qemu
+FROM resin/rpi-raspbian
 
 MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
@@ -46,7 +46,7 @@ RUN npm install -g node-gyp
 RUN npm install -g yarn
 RUN npm install -g knex-migrator
 
-LABEL image=allandequeiroz/ghost-the-shell:arm32v7
+LABEL image=allandequeiroz/ghost-the-shell:armhf
 
 # Ghost starter 
 CMD [ "/root/start-ghost.sh" ]
