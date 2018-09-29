@@ -1,18 +1,13 @@
-FROM resin/rpi-raspbian
+FROM rycus86/arm64v8-debian-qemu
 
 MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
 # Install dependencies 
 RUN apt-get update
 RUN apt-get install vim curl gnupg2 sudo wget unzip make build-essential libsqlite3-dev -y
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash 
+RUN apt-get install nodejs -y
 
-WORKDIR /usr/local/lib
-RUN wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-armv6l.tar.xz
-RUN tar -xvf node-v8.12.0-linux-armv6l.tar.xz
-RUN rm node-v8.12.0-linux-armv6l.tar.xz
-RUN ln -s /usr/local/lib/node-v8.12.0-linux-armv6l/bin/node /usr/bin/node
-RUN ln -s /usr/local/lib/node-v8.12.0-linux-armv6l/bin/npm /usr/bin/npm
- 
 # Creating ghost directory and using it as a workdir
 RUN mkdir -p /var/www/ghost
 WORKDIR /var/www/ghost
@@ -45,6 +40,8 @@ RUN npm install --production
 RUN npm install -g node-gyp
 RUN npm install -g yarn
 RUN npm install -g knex-migrator
+
+LABEL image=allandequeiroz/ghost-the-shell:arm64v8
 
 # Ghost starter 
 CMD [ "/root/start-ghost.sh" ]

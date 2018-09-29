@@ -46,5 +46,7 @@ RUN npm install -g node-gyp
 RUN npm install -g yarn
 RUN npm install -g knex-migrator
 
+LABEL image=allandequeiroz/ghost-the-shell:arm32v7
+
 # Ghost starter 
 CMD [ "/root/start-ghost.sh" ]
