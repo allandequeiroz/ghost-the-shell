@@ -4,7 +4,7 @@ MAINTAINER Allan de Queiroz <allandequeiroz@gmail.com>
 
 # Install dependencies 
 RUN apt-get update
-RUN apt-get install vim curl gnupg2 sudo wget unzip make build-essential libsqlite3-dev -y
+RUN apt-get install vim curl gnupg2 sudo wget unzip make build-essential libsqlite3-dev python -y
 
 WORKDIR /usr/local/lib
 RUN wget https://nodejs.org/dist/v8.12.0/node-v8.12.0-linux-armv6l.tar.xz
