@@ -27,8 +27,7 @@ RUN rm v0.1.2.tar.gz
 WORKDIR /var/www/ghost/core/server/data/schema
 RUN sed -i -e 's/"defaultValue": "casper"/"defaultValue": "The-Shell-0.1.2"/g' default-settings.json
 
-# Setting up needed configurations
-COPY conf/config.production.json /var/www/ghost
+# Setting up migration and start up script
 COPY bin/start-ghost.sh /root
 RUN chmod +x /root/start-ghost.sh
 
