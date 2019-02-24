@@ -1,28 +1,30 @@
 {
-    "url": "http://allandequeiroz.com",
-    "server": {
-        "host": "0.0.0.0",
-        "port": 2368
+  "url": "http://allandequeiroz.com",
+  "server": {
+    "host": "0.0.0.0",
+    "port": 2368
+  },
+  "database": {
+    "client": "sqlite3",
+    "connection": {
+      "filename": "content/data/blog.db"
     },
-    "database": {
-        "client": "sqlite3",
-        "connection": {
-            "filename": "content/data/blog.db"
-        },
-        "useNullAsDefault": true,
-        "debug": false
+    "useNullAsDefault": true,
+    "debug": false
+  },
+  "auth": {
+    "type": "password"
+  },
+  "paths": {
+    "contentPath": "content/"
+  },
+  "logging": {
+    "level": "info",
+    "rotation": {
+      "enabled": true
     },
-    "auth": {
-        "type": "password"
-    },
-    "paths": {
-        "contentPath": "content/"
-    },
-    "logging": {
-        "level": "info",
-        "rotation": {
-            "enabled": true
-        },
-        "transports": ["stdout"]
-    }
+    "transports": [
+      "stdout"
+    ]
+  }
 }

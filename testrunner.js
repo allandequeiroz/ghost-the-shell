@@ -1,4 +1,4 @@
-const 
+const
     EXIT_SUCCESS = 0,
     EXIT_FAILURE = 1;
 
@@ -28,16 +28,16 @@ page.open('http://localhost:2368', function (status) {
         const poweredby = page.evaluate(function () {
             return document.getElementsByClassName('poweredby');
         });
-        if(logo) {
+        if (logo) {
             console.log('blog-logo : ok')
         }
-        if(siteHead) {
+        if (siteHead) {
             console.log('site-head : ok')
         }
-        if(copyright) {
+        if (copyright) {
             console.log('copyright : ok')
         }
-        if(poweredby) {
+        if (poweredby) {
             console.log('poweredby : ok')
         }
         if (logo && siteHead && copyright && poweredby) {
