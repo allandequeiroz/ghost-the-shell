@@ -2,6 +2,13 @@ version: '3.2'
 
 services:
 
+  # NGinx as a Ghost proxy    
+  nginx:
+    image: allandequeiroz/nginx:amd64
+    restart: always  
+    ports:
+      - "443:443"
+      
   # Ghost server    
   ghost:
     image: allandequeiroz/ghost-the-shell
