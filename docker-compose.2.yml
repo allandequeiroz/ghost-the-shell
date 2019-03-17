@@ -2,12 +2,17 @@ version: '2'
 
 services:
 
+  # NGinx as a Ghost proxy    
+  nginx:
+    image: allandequeiroz/nginx:latest
+    restart: always  
+    ports:
+      - "443:443"   
+  
   # Ghost server    
   ghost:
     image: allandequeiroz/ghost-the-shell
-    restart: always  
-    ports:
-      - "80:2368"
+    restart: always 
     volumes:
       - $HOME/data/blog:/var/www/ghost/content/data/
       - $PWD/conf/config.production.json:/var/www/ghost/core/server/config/env/config.production.json
