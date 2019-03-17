@@ -9,4 +9,4 @@ services:
     ports:
       - "3000-80"
     volumes:
-      - $PWD/data/blog:/var/www/ghost/content/data/
+      - $HOME/data/blog:/var/www/ghost/content/data/
