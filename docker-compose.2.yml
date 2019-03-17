@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+  # Ghost server    
+  ghost:
+    image: allandequeiroz/ghost-the-shell
+    restart: always  
+    ports:
+      - "3000-80"
+    volumes:
+      - $PWD/data/blog:/var/www/ghost/content/data/
