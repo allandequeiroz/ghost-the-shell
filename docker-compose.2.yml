@@ -7,7 +7,7 @@ services:
     image: allandequeiroz/ghost-the-shell
     restart: always  
     ports:
-      - "2368-80"
+      - "2368:80"
     volumes:
       - $HOME/data/blog:/var/www/ghost/content/data/
       - $PWD/conf/config.production.json:/var/www/ghost/core/server/config/env/config.production.json
