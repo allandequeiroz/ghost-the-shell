@@ -4,7 +4,7 @@ services:
 
   # NGinx as a Ghost proxy    
   nginx:
-    image: allandequeiroz/nginx:amd64
+    image: allandequeiroz/nginx:ghost-amd64
     restart: always  
     ports:
       - "443:443"
